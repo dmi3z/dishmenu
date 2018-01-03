@@ -1,0 +1,14 @@
+<div class="main-menu">
+    <div class="main-menu__header" (click)="toggleMenu()">
+        <div class="main-menu__header_title">Menu</div>
+        <div class="main-menu__header_button">
+            <span class="button_hamburger"></span>
+        </div>
+    </div>
+    
+    <div #list class="main-menu__item-list">
+        <ul class="main-menu__item-list_group">
+            <li class="item-list_element" *ngFor="let item of menuItems" (click)="selectDish(item.id)">{{item.name}}</li>
+        </ul>
+    </div>  
+</div>
