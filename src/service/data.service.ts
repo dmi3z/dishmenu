@@ -25,55 +25,55 @@ export class DataService {
         {
             id: 0,
             name: 'Soup',
-            picture: 'http://picture',
+            picture: './assets/pict/soup.jpg',
             descr: 'hot, fresh, delicious soup with chicken'
         },
         {
             id: 1,
             name: 'Soup with mushrooms',
-            picture: 'http://picture',
+            picture: './assets/pict/soup_mush.jpg',
             descr: 'hot, fresh, delicious soup with mushrooms'
         },
         {
             id: 2,
             name: 'Borsch',
-            picture: 'http://picture',
+            picture: './assets/pict/borsch.jpg',
             descr: 'hot, fresh, delicious red borsch with chicken'
         },
         {
             id: 3,
             name: 'Mash with meatball',
-            picture: 'http://picture',
+            picture: './assets/pict/mash_mitb.jpg',
             descr: 'hot, fresh, delicious mash with meatball'
         },
         {
             id: 4,
             name: 'Mash with mushrooms',
-            picture: 'http://picture',
+            picture: './assets/pict/mash_mush.jpg',
             descr: 'hot, fresh, delicious mash with mushrooms'
         },
         {
             id: 5,
             name: 'Rice with steak',
-            picture: 'http://picture',
+            picture: './assets/pict/steak.jpg',
             descr: 'hot, delicious steak with great garnish'
         },
         {
             id: 6,
             name: 'Choco pie',
-            picture: 'http://picture',
+            picture: './assets/pict/choco_pie.jpg',
             descr: 'delicious choco pie'
         },
         {
             id: 7,
-            name: 'Chesse cake',
-            picture: 'http://picture',
+            name: 'Cheese cake',
+            picture: './assets/pict/cheese_cake.jpg',
             descr: 'delicious cheese cake'
         },
         {
             id: 8,
             name: 'Tiramisu',
-            picture: 'http://picture',
+            picture: './assets/pict/tiramisu.jpg',
             descr: 'delicious tiramisu'
         },
     ];
