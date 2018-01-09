@@ -13,10 +13,17 @@ export class DishItemComponent implements OnInit {
 
     @Input() item: DishItem;
 
-    constructor() {}
+    picture: string = '';
+
+    constructor() {
+        
+    }
 
     ngOnInit() {
-
+        const assetPath = './assets/pict/';
+        console.log(this.item);
+        this.picture = assetPath.concat(this.item.picture);
+        console.log(this.picture);
     }
 
 

@@ -19,7 +19,10 @@ export class MainMenuComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.menuItems = this.dataService.getMenuItems();
+        this.dataService.getMenuItems().subscribe(res => this.menuItems = res,
+        error => {
+            alert('Server error. Can not get categoryes. Try later.');
+        });
     }
 
     toggleMenu() {
@@ -32,9 +35,14 @@ export class MainMenuComponent implements OnInit {
     }
 
     selectDish(id: number) {
-        let result: DishItem[] = this.dataService.getDishesList(id);
-        this.providerService.sendItems(result);
-        this.toggleMenu();
+        this.dataService.getDishesList(id).subscribe(data => {
+            this.providerService.sendItems(data);
+            this.toggleMenu();
+        }, error => {
+            alert('Server error. Cannot get dishes list. Try later.')
+        });
+        
+        
     }
 
 }
