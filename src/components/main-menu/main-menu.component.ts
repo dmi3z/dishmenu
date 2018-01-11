@@ -19,9 +19,11 @@ export class MainMenuComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.dataService.getMenuItems().subscribe(res => this.menuItems = res,
+        this.dataService.getMenuItems().subscribe(res => { 
+            this.menuItems = res;
+        },
         error => {
-            alert('Server error. Can not get categoryes. Try later.');
+            alert('Server error. Can not get categories. Try later.');
         });
     }
 
@@ -36,6 +38,7 @@ export class MainMenuComponent implements OnInit {
 
     selectDish(id: number) {
         this.dataService.getDishesList(id).subscribe(data => {
+            console.log(data);
             this.providerService.sendItems(data);
             this.toggleMenu();
         }, error => {

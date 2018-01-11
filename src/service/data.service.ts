@@ -31,6 +31,7 @@ export class DataService {
     }
 
     getDishesList(id: number): Observable<DishItem[]> {
+        console.log('Incoming id: ', id);
         const action: string = 'dish';
         return this.http.get(this.url.concat(action, '/', id.toString())).map((res: Response) => {
             let data = JSON.parse(res.json());

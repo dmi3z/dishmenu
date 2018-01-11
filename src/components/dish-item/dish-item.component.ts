@@ -9,22 +9,7 @@ import { DishItem } from '../../service/index';
     styleUrls: ['dish-item.component.scss']
 })
 
-export class DishItemComponent implements OnInit {
+export class DishItemComponent {
 
     @Input() item: DishItem;
-
-    picture: string = '';
-
-    constructor() {
-        
-    }
-
-    ngOnInit() {
-        const assetPath = './assets/pict/';
-        console.log(this.item);
-        this.picture = assetPath.concat(this.item.picture);
-        console.log(this.picture);
-    }
-
-
 }
