@@ -1,0 +1,38 @@
+<div class="add-item">
+    <div class="add-item__form">
+        <h3>Add dish</h3>
+
+        <div class="add-item__form-picture left">
+            <div>Picture: 
+                <select [(ngModel)]="selectPicture">
+                    <option *ngFor="let picture of pictures" [ngValue]="picture">{{ picture.name }}</option>
+                </select>
+            </div>
+
+            <img src="{{selectPicture.path}}"/>
+
+        </div>
+
+        <div class="add-item__form-category left">
+            <div>
+                Category:
+                <select [(ngModel)]="selectCategory">
+                    <option *ngFor="let item of items" [ngValue]="item">{{ item.name }}</option>
+                </select>
+            </div>
+            {{ selectCategory.name }}
+        </div>
+
+        <div class="add-item__form-name left">
+            <div>Name</div>
+            <input type="text"/>
+        </div>
+
+        <div class="add-item__form-description left">
+            <div>Description</div>
+            <textarea></textarea>
+        </div>
+
+        <button class="add" (click)="add()">ADD</button>
+    </div>    
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 
 import { DataService, MenuItem, DishItem, ProviderService } from '../../service/index';
 
@@ -11,7 +11,8 @@ import { DataService, MenuItem, DishItem, ProviderService } from '../../service/
 
 export class MainMenuComponent implements OnInit {
 
-    @ViewChild('list') list;    
+    @ViewChild('list') list;
+    @Output() isShowLogin: EventEmitter<boolean> = new EventEmitter<boolean>(); 
     isMenuShow: boolean = false;
     menuItems: MenuItem[] = [];
 
@@ -38,14 +39,15 @@ export class MainMenuComponent implements OnInit {
 
     selectDish(id: number) {
         this.dataService.getDishesList(id).subscribe(data => {
-            console.log(data);
             this.providerService.sendItems(data);
             this.toggleMenu();
         }, error => {
             alert('Server error. Cannot get dishes list. Try later.')
         });
-        
-        
+    }
+
+    showLoginForm() {
+        this.isShowLogin.next(true);
     }
 
 }

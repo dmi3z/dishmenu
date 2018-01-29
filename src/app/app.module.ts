@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
-import { MainMenuComponent, DishItemComponent } from '../components/index';
+import { MainMenuComponent, DishItemComponent, LoginFormComponent, AddItemComponent } from '../components/index';
 
 import { DataService, ProviderService } from '../service/index';
 
@@ -13,13 +13,16 @@ import { DataService, ProviderService } from '../service/index';
   declarations: [
     AppComponent,
     MainMenuComponent,
-    DishItemComponent
+    DishItemComponent,
+    LoginFormComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
-  providers: [DataService, ProviderService ],
+  providers: [DataService, ProviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

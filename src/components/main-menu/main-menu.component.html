@@ -9,6 +9,7 @@
     <div #list class="main-menu__item-list">
         <ul class="main-menu__item-list_group">
             <li class="item-list_element" *ngFor="let item of menuItems" (click)="selectDish(item.id)">{{item.name}}</li>
+            <li class="item-list_element-login" (click)="showLoginForm()">Login</li>
         </ul>
     </div>  
 </div>

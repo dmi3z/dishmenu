@@ -9,6 +9,10 @@ import { DishItem, ProviderService } from '../service/index';
 })
 export class AppComponent {
   title = 'app';
+  showLoginForm: boolean = false;
+  showAddForm: boolean = false;
+
+  status: number = 0;
 
   items: DishItem[] = [];
 
@@ -17,4 +21,13 @@ export class AppComponent {
       this.items = data;
     })
   }
+
+  onShowLogin(show: boolean) {
+    this.showLoginForm = show;
+  }
+
+  onAddForm(show: boolean) {
+    this.showAddForm = show;
+  }
+
 }

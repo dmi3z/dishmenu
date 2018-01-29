@@ -11,5 +11,7 @@ import { DishItem } from '../../service/index';
 
 export class DishItemComponent {
 
+    @Input() status: number;
+
     @Input() item: DishItem;
 }

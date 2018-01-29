@@ -1,10 +1,13 @@
 <div class="menu">
-    <main-menu></main-menu>
+    <main-menu (isShowLogin)="onShowLogin($event)"></main-menu>
 </div>
 
+<login-form *ngIf="showLoginForm" (isShowLogin)="onShowLogin($event)"></login-form>
+
+<add-item *ngIf="showAddForm" (isAddForm)="onAddForm($event)"></add-item>
 
 <div class="content">
-    <dish-item [item]="item" *ngFor="let item of items"></dish-item>
+    <dish-item [item]="item" [status]="status" *ngFor="let item of items"></dish-item>
 </div>
 
 
